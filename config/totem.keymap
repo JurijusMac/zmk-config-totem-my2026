@@ -14,13 +14,14 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+/* Sluoksnių pavadinimai - pakeista LT į LIT, kad nebūtų konflikto */
 #define BASE 0
 #define NAV  1
 #define NUM  2
 #define SYM  3
 #define FUN  4
 #define SYS  5
-#define LT   6
+#define LIT  6
 
 / {
     behaviors {
@@ -44,7 +45,7 @@
                 &kp Q      &kp W      &kp F       &kp P       &kp B          &kp J       &kp L       &kp U       &kp Y       &kp SEMI
                 &hm LGUI A &hm LALT R &hm LCTRL S &hm LSHFT T &kp G          &kp M       &hm RSHFT N &hm RCTRL E &hm RALT I  &hm RGUI O
                 &kp Z      &kp X      &kp C       &kp D       &kp V          &kp K       &kp H       &kp COMMA   &kp DOT     &kp SLASH
-                               &kp SPACE &lt NUM RET &lt NAV TAB    &lt SYM ESC &lt LT BSPC &mt RSHFT DEL
+                               &kp SPACE &lt NUM RET &lt NAV TAB    &lt SYM ESC &lt LIT BSPC &mt RSHFT DEL
             >;
         };
 
@@ -98,8 +99,8 @@
             >;
         };
 
-        lt_layer {
-            label = "LT";
+        lit_layer {
+            label = "LIT";
             bindings = <
                 &none      &kp RA(W)  &none       &none       &none          &none       &none       &none       &none       &none
                 &kp RA(A)  &kp RA(C)  &kp RA(E)   &kp RA(S)   &kp RA(V)      &none       &kp RA(U)   &kp RA(I)   &none       &none
