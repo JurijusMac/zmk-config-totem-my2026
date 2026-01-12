@@ -3,12 +3,12 @@
 #include <dt-bindings/zmk/keys.h>
 
 #define BASE 0
-#define NAVL 1
-#define NUML 2
-#define SYML 3
-#define FUNL 4
-#define SYSL 5
-#define LITH 6
+#define NAV  1
+#define NUM  2
+#define SYM  3
+#define FUN  4
+#define SYS  5
+#define LT   6
 
 / {
     behaviors {
@@ -29,70 +29,70 @@
         base_layer {
             label = "BASE";
             bindings = <
-       &kp Q       &kp W       &kp F        &kp P         &kp B           &kp J         &kp L          &kp U          &kp Y       &kp SEMI
-       &hm LGUI A  &hm LALT R  &hm LCTRL S  &hm LSHFT T   &kp G           &kp M         &hm RSHFT N    &hm RCTRL E    &hm RALT I  &hm RGUI O
-&kp Z  &kp X       &kp C       &kp D        &kp V         &none           &none         &kp K          &kp H          &kp COMMA   &kp DOT     &kp SLASH
-                               &kp SPACE    &lt NUML RET  &lt NAVL TAB    &lt SYML ESC  &lt LITH BSPC  &mt RSHFT DEL
+                &kp Q       &kp W       &kp F        &kp P        &kp B        &kp J        &kp L        &kp U        &kp Y        &kp SEMI
+                &hm LGUI A  &hm LALT R  &hm LCTRL S  &hm LSHFT T  &kp G        &kp M        &hm RSHFT N  &hm RCTRL E  &hm RALT I   &hm RGUI O
+                &kp Z       &kp X       &kp C        &kp D        &kp V        &kp K        &kp H        &kp COMMA    &kp DOT      &kp SLASH
+                              &kp SPACE   &lt NUM RET   &lt NAV TAB   &lt SYM ESC   &lt LT BSPC   &mt RSHFT DEL
             >;
         };
 
         nav_layer {
             label = "NAV";
             bindings = <
-        &kp ESC   &kp HOME  &kp UP     &kp END    &kp PG_UP    &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &kp DEL
-        &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans       &trans     &kp RSHFT  &kp RCTRL  &kp RALT   &kp RGUI
-&trans  &trans    &trans    &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans    &trans
-                            &trans     &trans     &trans       &trans     &trans     &trans
+                &kp ESC    &kp HOME   &kp UP      &kp END     &kp PG_UP     &kp PG_DN    &kp LEFT    &kp DOWN    &kp RIGHT   &kp DEL
+                &kp LGUI   &kp LALT   &kp LCTRL   &kp LSHFT   &trans        &trans       &kp RSHFT   &kp RCTRL   &kp RALT    &kp RGUI
+                &trans     &trans     &trans      &trans     &trans        &trans       &trans      &trans      &trans      &trans
+                                     &trans      &trans      &trans        &trans       &trans      &trans
             >;
         };
 
         num_layer {
             label = "NUM";
             bindings = <
-        &kp N1    &kp N2     &kp N3    &kp N4         &kp N5       &kp N6  &kp N7     &kp N8     &kp N9    &kp N0
-        &kp PLUS  &kp MINUS  &kp STAR  &kp KP_DIVIDE  &kp EQUAL    &trans  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI
-&trans  &trans    &trans     &trans    &trans         &trans       &trans  &trans     &trans     &trans    &trans    &trans
-                             &trans    &trans         &trans       &trans  &trans     &trans
+                &kp N1     &kp N2     &kp N3            &kp N4            &kp N5        &kp N6      &kp N7      &kp N8      &kp N9      &kp N0
+                &kp PLUS   &kp MINUS  &kp KP_MULTIPLY   &kp KP_DIVIDE     &kp EQUAL     &trans      &kp RSHFT   &kp RCTRL   &kp RALT    &kp RGUI
+                &trans     &trans     &trans            &trans            &trans        &trans      &trans      &trans      &trans      &trans
+                                     &trans            &trans            &trans        &trans      &trans      &trans
             >;
         };
 
         sym_layer {
             label = "SYM";
             bindings = <
-        &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp STAR  &kp LPAR  &kp RPAR
-        &kp LBKT  &kp RBKT  &kp LBRC  &kp RBRC  &kp PIPE     &kp TILDE  &kp GRAVE  &kp LT    &kp GT    &kp QMARK
-&trans  &trans    &trans    &trans    &trans    &trans       &trans     &trans     &trans    &trans    &trans     &trans
-                            &trans    &trans    &trans       &trans     &trans     &trans
+                &kp EXCL   &kp AT     &kp HASH    &kp DLLR    &kp PRCNT      &kp CARET    &kp AMPS    &kp ASTERISK &kp LPAR    &kp RPAR
+                &kp LBKT   &kp RBKT   &kp LBRC    &kp RBRC    &kp PIPE       &kp TILDE    &kp GRAVE   &kp LT       &kp GT      &kp QMARK
+                &trans     &trans     &trans      &trans     &trans         &trans       &trans      &trans       &trans      &trans
+                                     &trans      &trans      &trans         &trans       &trans      &trans
             >;
         };
 
         fun_layer {
             label = "FUN";
             bindings = <
-        &kp F1   &kp F2   &kp F3  &kp F4  &kp F5    &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
-        &kp F11  &kp F12  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans   &trans   &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans   &trans
-                          &trans  &trans  &trans    &trans  &trans  &trans
+                &kp F1     &kp F2     &kp F3      &kp F4      &kp F5         &kp F6       &kp F7      &kp F8       &kp F9      &kp F10
+                &kp F11    &kp F12    &trans      &trans     &trans         &trans       &trans      &trans       &trans      &trans
+                &trans     &trans     &trans      &trans     &trans         &trans       &trans      &trans       &trans      &trans
+                                     &trans      &trans      &trans         &trans       &trans      &trans
             >;
         };
 
         sys_layer {
             label = "SYS";
             bindings = <
-        &sys_reset  &bt BT_CLR  &bt BT_NXT  &bt BT_PRV  &bootloader    &trans  &trans  &trans  &trans  &trans
-        &trans      &trans      &trans      &trans      &trans         &trans  &trans  &trans  &trans  &trans
-&trans  &trans      &trans      &trans      &trans      &trans         &trans  &trans  &trans  &trans  &trans  &trans
-                                &trans      &trans      &trans         &trans  &trans  &trans
+                &sys_reset &bt BT_CLR &bt BT_NXT  &bt BT_PRV  &bootloader    &trans       &trans      &trans       &trans      &trans
+                &trans     &trans     &trans      &trans     &trans         &trans       &trans      &trans       &trans      &trans
+                &trans     &trans     &trans      &trans     &trans         &trans       &trans      &trans       &trans      &trans
+                                     &trans      &trans      &trans         &trans       &trans      &trans
             >;
         };
 
-        lith_layer {
-            label = "LITH";
+        lt_layer {
+            label = "LT";
             bindings = <
-           &none      &kp RA(W)  &none      &none      &none        &none  &none      &none      &none  &none
-           &kp RA(A)  &kp RA(C)  &kp RA(E)  &kp RA(S)  &kp RA(V)    &none  &kp RA(U)  &kp RA(I)  &none  &none
-&kp RA(Z)  &none      &none      &none      &none      &none        &none  &none      &none      &none  &none  &none
-                                 &trans     &trans     &trans       &none  &none      &none
+                &none      &kp RA(W)  &none       &none       &none          &none        &none       &none        &none       &none
+                &kp RA(A)  &kp RA(C)  &kp RA(E)   &kp RA(S)   &kp RA(V)      &none        &kp RA(U)   &kp RA(I)    &none       &none
+                &kp RA(Z)  &none      &none       &none       &none          &none        &none       &none        &none       &none
+                                     &trans      &trans      &trans         &none        &none       &none
             >;
         };
     };
