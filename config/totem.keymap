@@ -8,7 +8,7 @@
 #define SYML 3
 #define FUNL 4
 #define SYSL 5
-#define LITH 6
+#define LIT 6
 
 / {
     behaviors {
@@ -87,7 +87,7 @@
         };
 
         lith_layer {
-            label = "LITH";
+            label = "LIT";
             bindings = <
                 &none      &kp RA(W)  &none      &none      &none          &none      &none      &none      &none      &none
                 &kp RA(A)  &kp RA(C)  &kp RA(E)  &kp RA(S)  &kp RA(V)      &none      &kp RA(U)  &kp RA(I)  &none      &none
