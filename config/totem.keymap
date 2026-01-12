@@ -3,11 +3,11 @@
 #include <dt-bindings/zmk/keys.h>
 
 #define BASE 0
-#define NAV  1
-#define NUM  2
-#define SYM  3
-#define FUN  4
-#define SYS  5
+#define NAVL 1
+#define NUML 2
+#define SYML 3
+#define FUNL 4
+#define SYSL 5
 #define LITH 6
 
 / {
@@ -29,10 +29,10 @@
         base_layer {
             label = "BASE";
             bindings = <
-       &kp Q       &kp W       &kp F        &kp P        &kp B          &kp J        &kp L          &kp U          &kp Y       &kp SEMI
-       &hm LGUI A  &hm LALT R  &hm LCTRL S  &hm LSHFT T  &kp G          &kp M        &hm RSHFT N    &hm RCTRL E    &hm RALT I  &hm RGUI O
-&kp Z  &kp X       &kp C       &kp D        &kp V        &none          &none        &kp K          &kp H          &kp COMMA   &kp DOT     &kp SLASH
-                               &kp SPACE    &lt NUM RET  &lt NAV TAB    &lt SYM ESC  &lt LITH BSPC  &mt RSHFT DEL
+       &kp Q       &kp W       &kp F        &kp P         &kp B           &kp J         &kp L          &kp U          &kp Y       &kp SEMI
+       &hm LGUI A  &hm LALT R  &hm LCTRL S  &hm LSHFT T   &kp G           &kp M         &hm RSHFT N    &hm RCTRL E    &hm RALT I  &hm RGUI O
+&kp Z  &kp X       &kp C       &kp D        &kp V         &none           &none         &kp K          &kp H          &kp COMMA   &kp DOT     &kp SLASH
+                               &kp SPACE    &lt NUML RET  &lt NAVL TAB    &lt SYML ESC  &lt LITH BSPC  &mt RSHFT DEL
             >;
         };
 
@@ -93,15 +93,6 @@
            &kp RA(A)  &kp RA(C)  &kp RA(E)  &kp RA(S)  &kp RA(V)    &none  &kp RA(U)  &kp RA(I)  &none  &none
 &kp RA(Z)  &none      &none      &none      &none      &none        &none  &none      &none      &none  &none  &none
                                  &trans     &trans     &trans       &none  &none      &none
-            >;
-        };
-
-        layer_7 {
-            bindings = <
-        &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
