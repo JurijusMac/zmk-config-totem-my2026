@@ -3,11 +3,11 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define BASE 0
-#define NAVL 1
-#define NUML 2
-#define SYML 3
-#define FUNL 4
-#define SYSL 5
+#define NAV 1
+#define NUM 2
+#define SYM 3
+#define FUN 4
+#define SYS 5
 #define LIT 6
 
 / {
