@@ -6,7 +6,7 @@
 #define NAV  1
 #define NUM  2
 #define SYM  3
-#define LT   4
+#define LITH 4
 #define CMDL 5
 
 / {
@@ -39,7 +39,7 @@
         };
 
         /* =========================
-         * CMD layer – macOS + Raycast
+         * CMD layer – macOS / Raycast
          * ========================= */
         cmd_layer {
             label = "CMD";
@@ -52,7 +52,7 @@
         };
 
         /* =========================
-         * NAV – Vim navigation
+         * NAV – arrows, vim, movement
          * ========================= */
         nav_layer {
             label = "NAV";
@@ -65,7 +65,7 @@
         };
 
         /* =========================
-         * NUM – numbers
+         * NUM – numbers & math
          * ========================= */
         num_layer {
             label = "NUM";
@@ -78,7 +78,7 @@
         };
 
         /* =========================
-         * SYM – symbols
+         * SYM – punctuation
          * ========================= */
         sym_layer {
             label = "SYM";
@@ -93,8 +93,8 @@
         /* =========================
          * Lithuanian – US-International + AltGr
          * ========================= */
-        lt_layer {
-            label = "LT";
+        lith_layer {
+            label = "LITH";
             bindings = <
    &none       &kp RA(W)   &none        &none        &none           &none        &none        &none        &none        &none
    &kp RA(A)   &kp RA(C)   &kp RA(E)    &kp RA(S)    &kp RA(V)       &none        &kp RA(U)    &kp RA(I)    &none        &none
