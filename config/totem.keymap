@@ -12,23 +12,40 @@
 &mt {
     quick-tap-ms = <100>;
     global-quick-tap;
-    flavor = "tap-preferred";
-    tapping-term-ms = <170>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <200>;
 };
 
 &lt {
     quick-tap-ms = <100>;
-    tapping-term-ms = <170>;
+    tapping-term-ms = <200>;
 };
 
 / {
     combos {
         compatible = "zmk,combos";
         
+        // ' + [ = toggle SYS layer
         combo_sys_toggle {
             timeout-ms = <100>;
             key-positions = <32 33>;
             bindings = <&tog SYS>;
+            layers = <BASE>;
+        };
+
+        // Z = momentary LT_NAV layer (hold longer)
+        combo_z_nav {
+            timeout-ms = <50>;
+            key-positions = <20>;
+            bindings = <&mo LT_NAV>;
+            layers = <BASE>;
+        };
+
+        // OPTION + BACKSPACE = DELETE
+        combo_opt_del {
+            timeout-ms = <100>;
+            key-positions = <34 35>;
+            bindings = <&kp DEL>;
             layers = <BASE>;
         };
     };
@@ -41,8 +58,8 @@
             bindings = <
                 &kp Q       &kp W       &kp F        &kp P        &kp B        &kp J        &kp L        &kp U        &kp Y        &kp SEMI
                 &mt LGUI A  &mt LALT R  &mt LCTRL S  &mt LSHFT T  &kp G        &kp M        &mt RSHFT N  &mt RCTRL E  &mt RALT I   &mt RGUI O
-    &lt LT_NAV Z &kp X       &kp C        &kp D        &kp V        &kp K        &kp H        &kp COMMA    &kp DOT      &kp FSLH     &kp SQT      &kp LBKT
-                                        &mt LGUI SPACE  &mt LSHFT TAB  &kp ESC      &kp RET      &lt NUM_SYM BSPC  &kp LCTRL
+    &kp Z       &kp X       &kp C        &kp D        &kp V        &kp K        &kp H        &kp COMMA    &kp DOT      &kp FSLH     &kp SQT      &kp LBKT
+                                        &mt LGUI SPACE  &mt LSHFT TAB  &kp ESC      &kp RET      &mt LALT BSPC  &kp LCTRL
             >;
         };
 
