@@ -1,6 +1,6 @@
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 
 #define BASE 0
@@ -17,36 +17,29 @@
 };
 
 &lt {
-    quick-tap-ms = <100>;
+    quick-tap-ms = <50>;
     tapping-term-ms = <200>;
+    flavor = "tap-preferred";
 };
 
 / {
     combos {
         compatible = "zmk,combos";
-        
-        // ' + [ = toggle SYS layer
-        combo_sys_toggle {
-            timeout-ms = <100>;
-            key-positions = <32 33>;
-            bindings = <&tog SYS>;
-            layers = <BASE>;
-        };
 
-        // Z = momentary LT_NAV layer (hold longer)
-        combo_z_nav {
-            timeout-ms = <50>;
-            key-positions = <20>;
-            bindings = <&mo LT_NAV>;
-            layers = <BASE>;
-        };
+        // ' + [ = toggle SYS layer (key-positions 33 34)
+        // OPTION + BACKSPACE = DELETE (key-positions 36 37)
 
-        // OPTION + BACKSPACE = DELETE
         combo_opt_del {
             timeout-ms = <100>;
-            key-positions = <34 35>;
+            key-positions = <36 37>;
             bindings = <&kp DEL>;
-            layers = <BASE>;
+            layers = <0>;
+        };
+
+        SYS_LAYER {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <31 30>;
+            layers = <3>;
         };
     };
 
@@ -56,50 +49,40 @@
         base_layer {
             label = "BASE";
             bindings = <
-                &kp Q       &kp W       &kp F        &kp P        &kp B        &kp J        &kp L        &kp U        &kp Y        &kp SEMI
-                &mt LGUI A  &mt LALT R  &mt LCTRL S  &mt LSHFT T  &kp G        &kp M        &mt RSHFT N  &mt RCTRL E  &mt RALT I   &mt RGUI O
-    &kp Z       &kp X       &kp C        &kp D        &kp V        &kp K        &kp H        &kp COMMA    &kp DOT      &kp FSLH     &kp SQT      &kp LBKT
-                                        &mt LGUI SPACE  &mt LSHFT TAB  &kp ESC      &kp RET      &mt LALT BSPC  &kp LCTRL
-            >;
-        };
-
-        cmd_layer {
-            label = "CMD";
-            bindings = <
-                &trans      &trans      &kp LG(K)   &trans       &trans       &trans       &trans       &trans       &trans       &kp LG(P)
-                &kp LG(A)   &trans      &kp LG(S)   &trans       &trans       &trans       &trans       &kp LG(F)    &trans       &kp LG(O)
-    &kp LG(Z)   &kp LG(X)   &kp LG(C)   &trans      &kp LG(V)    &trans       &trans       &trans       &trans       &kp LG(Q)    &kp LG(W)    &kp LG(LS(Z))
-                                        &trans      &trans      &trans       &trans       &trans      &trans
+         &kp Q  &kp W  &kp F           &kp P          &kp B      &kp J    &kp L        &kp U          &kp Y       &kp SEMI
+         &kp A  &kp R  &kp S           &kp T          &kp G      &kp M    &mt RSHFT N  &mt RCTRL E    &mt RALT I  &mt RGUI O
+&lt 2 Z  &kp X  &kp C  &kp D           &kp V          &kp K      &kp H    &kp COMMA    &kp DOT        &kp FSLH    &kp SQT     &kp LBKT
+                       &mt LGUI SPACE  &mt LSHFT TAB  &kp ESC    &kp RET  &lt 1 F3     &kp BACKSPACE
             >;
         };
 
         num_sym_layer {
             label = "NUM+SYM";
             bindings = <
-                &kp EXCL    &kp AT      &kp HASH     &kp DLLR     &kp PRCNT    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5
-                &kp CARET   &kp AMPS    &kp ASTERISK &kp LPAR     &kp RPAR     &kp N6       &kp N7       &kp N8       &kp N9       &kp N0
-    &kp MINUS   &kp PLUS    &kp EQUAL   &kp UNDER    &kp TILDE    &kp GRAVE    &kp LT       &kp GT       &kp QMARK    &kp DQT      &kp SQT      &kp RBKT
-                                        &trans      &trans      &trans       &trans       &trans      &trans
+           &kp EXCL   &kp AT     &kp HASH      &kp DLLR   &kp PRCNT    &kp N1  &kp N2  &kp N3     &kp N4   &kp N5
+           &kp CARET  &kp AMPS   &kp ASTERISK  &kp LPAR   &kp RPAR     &kp N6  &kp N7  &kp N8     &kp N9   &kp N0
+&kp MINUS  &kp PLUS   &kp EQUAL  &kp UNDER     &kp TILDE  &kp GRAVE    &kp LT  &kp GT  &kp QMARK  &kp DQT  &kp SQT  &kp RBKT
+                                 &trans        &trans     &trans       &trans  &trans  &trans
             >;
         };
 
         lt_nav_layer {
             label = "LT+NAV";
             bindings = <
-                &kp RA(A)   &kp RA(C)   &kp RA(E)    &kp RA(S)    &kp RA(Z)    &kp RA(U)    &kp RA(I)    &trans       &trans       &kp UP
-                &kp F1      &kp F2      &kp F3       &kp F4       &kp F5       &kp F11      &kp F12      &trans       &trans       &kp DOWN
-    &trans      &kp F6      &kp F7      &kp F8       &kp F9       &kp F10      &trans       &trans       &trans       &kp LEFT     &trans       &kp RIGHT
-                                        &trans      &trans      &trans       &trans       &trans      &trans
+        &kp RA(A)  &kp RA(C)  &kp RA(E)  &kp RA(S)  &kp RA(Z)    &kp RA(U)  &kp RA(I)  &trans  &trans    &kp UP
+        &kp F1     &kp F2     &kp F3     &kp F4     &kp F5       &kp F11    &kp F12    &trans  &trans    &kp DOWN
+&trans  &kp F6     &kp F7     &kp F8     &kp F9     &kp F10      &trans     &trans     &trans  &kp LEFT  &trans    &kp RIGHT
+                              &trans     &trans     &trans       &trans     &trans     &trans
             >;
         };
 
         sys_layer {
             label = "SYS";
             bindings = <
-                &sys_reset  &bt BT_CLR  &out OUT_TOG &trans       &trans       &kp F7       &kp F8       &kp F9       &kp F12      &kp LG(LS(N3))
-                &bootloader &bt BT_NXT  &trans       &trans       &trans       &kp F4       &kp F5       &kp F6       &kp F11      &kp LG(LS(N4))
-    &trans      &trans      &bt BT_PRV  &trans       &trans       &trans       &kp F1       &kp F2       &kp F3       &kp F10      &trans       &kp LG(LS(N5))
-                                        &trans      &trans      &trans       &trans       &trans      &trans
+        &sys_reset   &bt BT_CLR  &out OUT_TOG  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+        &bootloader  &bt BT_NXT  &trans        &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans       &bt BT_PRV  &trans        &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                                 &trans        &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
