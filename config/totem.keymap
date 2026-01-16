@@ -49,19 +49,19 @@
         base_layer {
             label = "BASE";
             bindings = <
-         &kp Q  &kp W  &kp F           &kp P          &kp B      &kp J    &kp L        &kp U          &kp Y       &kp SEMI
-         &kp A  &kp R  &kp S           &kp T          &kp G      &kp M    &mt RSHFT N  &mt RCTRL E    &mt RALT I  &mt RGUI O
-&lt 2 Z  &kp X  &kp C  &kp D           &kp V          &kp K      &kp H    &kp COMMA    &kp DOT        &kp FSLH    &kp SQT     &kp LBKT
-                       &mt LGUI SPACE  &mt LSHFT TAB  &kp ESC    &kp RET  &lt 1 F3     &kp BACKSPACE
+         &kp Q  &kp W  &kp F           &kp P          &kp B      &kp J    &kp L      &kp U          &kp Y     &kp SEMI
+         &kp A  &kp R  &kp S           &kp T          &kp G      &kp M    &kp N      &kp E          &kp I     &kp O
+&lt 2 Z  &kp X  &kp C  &kp D           &kp V          &kp K      &kp H    &kp COMMA  &kp DOT        &kp FSLH  &kp SQT   &kp LBKT
+                       &mt LGUI SPACE  &mt LSHFT TAB  &kp ESC    &kp RET  &lt 1 F3   &kp BACKSPACE
             >;
         };
 
         num_sym_layer {
             label = "NUM+SYM";
             bindings = <
-           &kp EXCL   &kp AT     &kp HASH      &kp DLLR   &kp PRCNT    &kp N1  &kp N2  &kp N3     &kp N4   &kp N5
-           &kp CARET  &kp AMPS   &kp ASTERISK  &kp LPAR   &kp RPAR     &kp N6  &kp N7  &kp N8     &kp N9   &kp N0
-&kp MINUS  &kp PLUS   &kp EQUAL  &kp UNDER     &kp TILDE  &kp GRAVE    &kp LT  &kp GT  &kp QMARK  &kp DQT  &kp SQT  &kp RBKT
+           &kp EXCL   &kp AT     &kp HASH      &kp DLLR   &kp PRCNT    &kp N1  &kp N2  &kp N3  &kp N4        &kp N5
+           &kp CARET  &kp AMPS   &kp ASTERISK  &kp LPAR   &kp RPAR     &kp N6  &kp N7  &kp N8  &kp N9        &kp N0
+&kp MINUS  &kp PLUS   &kp EQUAL  &kp UNDER     &kp TILDE  &kp GRAVE    &none   &kp LT  &kp GT  &kp QUESTION  &kp DOUBLE_QUOTES  &kp RBKT
                                  &trans        &trans     &trans       &trans  &trans  &trans
             >;
         };
